@@ -1,0 +1,85 @@
+﻿<Window x:Class="AnnexMarker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnnexMarker"
+        mc:Ignorable="d"
+        Title="Annex Marker" Height="500" Width="400">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1"><Bold>File</Bold></TextBlock>
+        <Button Grid.Column="2" Grid.Row="2" Margin="5 20 5 30" Click="Browse" Content="Browse"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0 20 0 30" BorderThickness="1" MaxLength="255" TextWrapping="Wrap" x:Name="path"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="3"><Bold>Annex Title</Bold></TextBlock>
+        <Grid Grid.Column="2" Grid.Row="2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Make foreground transparent because we want to set content, but content is always draw on right of bubble, but we want it drawn on top. So we make the real one invisible-->
+            <TextBlock   Grid.Column="0" Grid.Row="1" Margin="8 1 0 0"><Bold>L</Bold></TextBlock>
+            <RadioButton Grid.Column="0" Grid.Row="2" Margin="6 1 0 0" x:Name="titleRBLeft"   Checked="TitleCheck" Content='L' Foreground="Transparent"/>
+            <TextBlock   Grid.Column="1" Grid.Row="1" Margin="8 1 0 0"><Bold>C</Bold></TextBlock>
+            <RadioButton Grid.Column="1" Grid.Row="2" Margin="6 1 0 0" x:Name="titleRBCenter" Checked="TitleCheck" Content='C' Foreground="Transparent"/>
+            <TextBlock   Grid.Column="2" Grid.Row="1" Margin="8 1 0 0"><Bold>R</Bold></TextBlock>
+            <RadioButton Grid.Column="2" Grid.Row="2" Margin="6 1 0 0" x:Name="titleRBRight"  Checked="TitleCheck" Content='R' Foreground="Transparent"/>
+        </Grid>
+        <TextBox Grid.Column="1" Grid.Row="4" Margin="0 20 0 30" BorderThickness="1" Grid.ColumnSpan="2" MaxLength="75" TextWrapping="Wrap" x:Name="title"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5" TextWrapping="Wrap"><Bold>IP Marking</Bold></TextBlock>
+        <Grid Grid.Column="2" Grid.Row="4" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Make foreground transparent because we want to set content, but content is always draw on right of bubble, but we want it drawn on top. So we make the real one invisible-->
+            <TextBlock   Grid.Column="0" Grid.Row="1" Margin="8 1 0 0"><Bold>L</Bold></TextBlock>
+            <RadioButton Grid.Column="0" Grid.Row="2" Margin="6 1 0 0" x:Name="footerRBLeft"   Checked="FooterCheck" Content='L' Foreground="Transparent"/>
+            <TextBlock   Grid.Column="1" Grid.Row="1" Margin="8 1 0 0"><Bold>C</Bold></TextBlock>
+            <RadioButton Grid.Column="1" Grid.Row="2" Margin="6 1 0 0" x:Name="footerRBCenter" Checked="FooterCheck" Content='C' Foreground="Transparent"/>
+            <TextBlock   Grid.Column="2" Grid.Row="1" Margin="8 1 0 0"><Bold>R</Bold></TextBlock>
+            <RadioButton Grid.Column="2" Grid.Row="2" Margin="6 1 0 0" x:Name="footerRBRight"  Checked="FooterCheck" Content='R' Foreground="Transparent"/>
+        </Grid>
+        <TextBox Grid.Column="1" Grid.Row="6" Margin="0 20 0 10" BorderThickness="1" Grid.ColumnSpan="2" MaxLength="300" TextWrapping="Wrap" x:Name="footer" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button  Grid.Column="1" Grid.Row="7" Margin="90 10 90 10" BorderThickness="1" Grid.ColumnSpan="2" Click="Submit" Content="Stamp PDF"/>
+        <TextBlock Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" TextWrapping="Wrap"><Bold>NOTE: This will create a PDF copy of the selected file in the location selected. Renamed to "Title" field. </Bold></TextBlock>
+        <TextBox  Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" TextWrapping="Wrap" IsEnabled="False" x:Name="errorBox" Foreground="Red"/>
+
+    </Grid>
+</Window>
