@@ -1,3 +1,3 @@
 # Annex Marker
 ---
-A simple Windows Presentation Foundation(WPF) program which can be used to turn any provided PDF file into a proper annex (supporting document) for a different document. This can be used for quickly producing an annex for a document with all the required corresponding information as entered into the WPF interface without having to add things such as trademark or copyright information to each page individual. As you might have to do if you didn't have access to paid tools which could do this for you.
+A simple Windows Presentation Foundation(WPF) program which can be used to instantly turn any provided PDF file into a proper annex (supporting document) for a different document with the required copyright/trademark information as entered into the WPF interface. Eliminating the need to add this to each page individually as you might have to do if you lack the paid tools typically required to do this editing of a PDF file.
