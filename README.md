@@ -2,7 +2,7 @@
 
 ## Overview
 
-Annex Marker is a user-friendly Windows Presentation Foundation (WPF) application designed to streamline the process of marking PDF files as annexes or supporting documents. It facilitates the addition of necessary header and footer information to all pages of a PDF file, ensuring it meets the standards required for proper documentation. This tool is especially valuable for users who do not have access to paid PDF editing software, offering a cost-effective and efficient alternative to manually adding information to each page.
+PDFMark is a user-friendly Windows Presentation Foundation (WPF) application designed to streamline the process of marking PDF files as annexes or supporting documents. It facilitates the addition of necessary header and footer information to all pages of a PDF file, ensuring it meets the standards required for proper documentation. This tool is especially valuable for users who do not have access to paid PDF editing software, offering a cost-effective and efficient alternative to manually adding information to each page.
 
 ## Features
 
